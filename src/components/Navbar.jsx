@@ -6,12 +6,16 @@ export const Navbar = () => {
 		<nav className="navbar navbar-light bg-light">
 			<div className="container">
 				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+					<i className="fa-solid fa-jedi"></i>
 				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
-					</Link>
+				<div className="dropdown">
+					<button className="btn btn-primary dropdown-toggle d-flex align-items-center px-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+						Favorites
+						<span className="bg-secondary px-2 rounded text-white">0</span>
+					</button>
+					<ul className="dropdown-menu">
+						<li><a className="dropdown-item " href="#">Empty</a></li>
+					</ul>
 				</div>
 			</div>
 		</nav>
