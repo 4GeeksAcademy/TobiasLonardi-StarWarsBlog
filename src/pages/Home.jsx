@@ -1,11 +1,15 @@
 import rigoImageUrl from "../assets/img/rigo-baby.jpg";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react"
+
 
 
 export const Home = () => {
 
 	const { store, dispatch } = useGlobalReducer()
+	const [Planets, setPlanets] = useState([])
+
 
 	return (
 		<div className="container">
@@ -18,124 +22,23 @@ export const Home = () => {
 				gap: '1rem',
 				padding: '10px'
 			}}>
-				<div className="card " style={{ width: "18rem", minWidth: '300px', height: '525px', backgroundColor: 'lightblue' }}>
-					<img src="https://i.pravatar.cc/300" className="card-img-top" alt="..." />
+				{store.characters.map((items)=>
+				<div className="card " key={items?.properties.id} style={{ width: "18rem", minWidth: '200px', height: '525px', backgroundColor: 'lightblue' }}>
+					<img src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/refs/heads/master/public/images/people/${items.uid}.jpg`} className="card-img-top " alt={items?.properties.name} />
 					<div className="card-body">
-						<h5 className="card-title">Card title</h5>
-						<p className="card-text">Gender: Male</p>
-						<p className="card-text">Hair-color: Brown</p>
-						<p className="card-text">Eye-Color: Brown</p>
+						<h5 className="card-title">Name:{items?.properties.name}</h5>
+						<p className="card-text">Gender: {items?.properties.gender}</p>
+						<p className="card-text">Hair-color: {items?.properties.hair_color}</p>
+						<p className="card-text">Eye-Color: {items?.properties.eye_color}</p>
 						<div className="d-flex justify-content-between">
 							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
+							<span className="btn btn-primary fa-regular fa-heart "></span>
 						</div>
 					</div>
 				</div>
-				<div className="card " style={{ width: "18rem", minWidth: '300px', height: '525px', backgroundColor: 'lightblue' }}>
-					<img src="https://i.pravatar.cc/300" className="card-img-top" alt="..." />
-					<div className="card-body">
-						<h5 className="card-title">Card title</h5>
-						<p className="card-text">Gender: Male</p>
-						<p className="card-text">Hair-color: Brown</p>
-						<p className="card-text">Eye-Color: Brown</p>
-						<div className="d-flex justify-content-between">
-							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
-						</div>
-						
-					</div>
-				</div>
-				<div className="card " style={{ width: "18rem", minWidth: '300px', height: '525px', backgroundColor: 'lightblue' }}>
-					<img src="https://i.pravatar.cc/300" className="card-img-top" alt="..." />
-					<div className="card-body">
-						<h5 className="card-title">Card title</h5>
-						<p className="card-text">Gender: Male</p>
-						<p className="card-text">Hair-color: Brown</p>
-						<p className="card-text">Eye-Color: Brown</p>
-						<div className="d-flex justify-content-between">
-							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
-						</div>
-					</div>
-				</div>
-				<div className="card " style={{ width: "18rem", minWidth: '300px', height: '525px', backgroundColor: 'lightblue' }}>
-					<img src="https://i.pravatar.cc/300" className="card-img-top" alt="..." />
-					<div className="card-body">
-						<h5 className="card-title">Card title</h5>
-						<p className="card-text">Gender: Male</p>
-						<p className="card-text">Hair-color: Brown</p>
-						<p className="card-text">Eye-Color: Brown</p>
-						<div className="d-flex justify-content-between">
-							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
-						</div>
-					</div>
-				</div>
-				<div className="card " style={{ width: "18rem", minWidth: '300px', height: '525px', backgroundColor: 'lightblue' }}>
-					<img src="https://i.pravatar.cc/300" className="card-img-top" alt="..." />
-					<div className="card-body">
-						<h5 className="card-title">Card title</h5>
-						<p className="card-text">Gender: Male</p>
-						<p className="card-text">Hair-color: Brown</p>
-						<p className="card-text">Eye-Color: Brown</p>
-						<div className="d-flex justify-content-between">
-							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
-						</div>
-					</div>
-				</div>
-				<div className="card " style={{ width: "18rem", minWidth: '300px', height: '525px', backgroundColor: 'lightblue' }}>
-					<img src="https://i.pravatar.cc/300" className="card-img-top" alt="..." />
-					<div className="card-body">
-						<h5 className="card-title">Card title</h5>
-						<p className="card-text">Gender: Male</p>
-						<p className="card-text">Hair-color: Brown</p>
-						<p className="card-text">Eye-Color: Brown</p>
-						<div className="d-flex justify-content-between">
-							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
-						</div>
-					</div>
-				</div>
-				<div className="card " style={{ width: "18rem", minWidth: '300px', height: '525px', backgroundColor: 'lightblue' }}>
-					<img src="https://i.pravatar.cc/300" className="card-img-top" alt="..." />
-					<div className="card-body">
-						<h5 className="card-title">Card title</h5>
-						<p className="card-text">Gender: Male</p>
-						<p className="card-text">Hair-color: Brown</p>
-						<p className="card-text">Eye-Color: Brown</p>
-						<div className="d-flex justify-content-between">
-							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
-						</div>
-					</div>
-				</div>
-				<div className="card " style={{ width: "18rem", minWidth: '300px', height: '525px', backgroundColor: 'lightblue' }}>
-					<img src="https://i.pravatar.cc/300" className="card-img-top" alt="..." />
-					<div className="card-body">
-						<h5 className="card-title">Card title</h5>
-						<p className="card-text">Gender: Male</p>
-						<p className="card-text">Hair-color: Brown</p>
-						<p className="card-text">Eye-Color: Brown</p>
-						<div className="d-flex justify-content-between">
-							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
-						</div>
-					</div>
-				</div>
-				<div className="card " style={{ width: "18rem", minWidth: '300px', height: '525px', backgroundColor: 'lightblue' }}>
-					<img src="https://i.pravatar.cc/300" className="card-img-top" alt="..." />
-					<div className="card-body">
-						<h5 className="card-title">Card title</h5>
-						<p className="card-text">Gender: Male</p>
-						<p className="card-text">Hair-color: Brown</p>
-						<p className="card-text">Eye-Color: Brown</p>
-						<div className="d-flex justify-content-between">
-							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
-						</div>
-					</div>
-				</div>
+				)}
+				
+				
 
 			</div>
 			<div className="text-start">
@@ -157,7 +60,7 @@ export const Home = () => {
 
 						<div className="d-flex justify-content-between">
 							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
+							<span className="btn btn-primary fa-regular fa-heart "></span>
 						</div>
 					</div>
 				</div>
@@ -169,7 +72,7 @@ export const Home = () => {
 						<p className="card-text">Terrain: land with grass and mountains</p>
 						<div className="d-flex justify-content-between">
 							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
+							<span className="btn btn-primary fa-regular fa-heart "></span>
 						</div>
 					</div>
 				</div>
@@ -181,7 +84,7 @@ export const Home = () => {
 						<p className="card-text">Terrain: land with grass and mountains</p>
 						<div className="d-flex justify-content-between">
 							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
+							<span className="btn btn-primary fa-regular fa-heart "></span>
 						</div>
 					</div>
 				</div>
@@ -193,7 +96,7 @@ export const Home = () => {
 						<p className="card-text">Terrain: land with grass and mountains</p>
 						<div className="d-flex justify-content-between">
 							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
+							<span className="btn btn-primary fa-regular fa-heart "></span>
 						</div>
 					</div>
 				</div>
@@ -205,7 +108,7 @@ export const Home = () => {
 						<p className="card-text">Terrain: land with grass and mountains</p>
 						<div className="d-flex justify-content-between">
 							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
+							<span className="btn btn-primary fa-regular fa-heart "></span>
 						</div>
 					</div>
 				</div>
@@ -217,7 +120,7 @@ export const Home = () => {
 						<p className="card-text">Terrain: land with grass and mountains</p>
 						<div className="d-flex justify-content-between">
 							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
+							<span className="btn btn-primary fa-regular fa-heart "></span>
 						</div>
 					</div>
 				</div>
@@ -229,7 +132,7 @@ export const Home = () => {
 						<p className="card-text">Terrain: land with grass and mountains</p>
 						<div className="d-flex justify-content-between">
 							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
+							<span className="btn btn-primary fa-regular fa-heart "></span>
 						</div>
 					</div>
 				</div>
@@ -241,7 +144,7 @@ export const Home = () => {
 						<p className="card-text">Terrain: land with grass and mountains</p>
 						<div className="d-flex justify-content-between">
 							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
+							<span className="btn btn-primary fa-regular fa-heart "></span>
 						</div>
 					</div>
 				</div>
@@ -253,7 +156,7 @@ export const Home = () => {
 						<p className="card-text">Terrain: land with grass and mountains</p>
 						<div className="d-flex justify-content-between">
 							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
-							<span class="btn btn-primary fa-regular fa-heart "></span>
+							<span className="btn btn-primary fa-regular fa-heart "></span>
 						</div>
 					</div>
 				</div>

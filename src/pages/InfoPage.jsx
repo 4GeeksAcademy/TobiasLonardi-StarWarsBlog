@@ -1,5 +1,8 @@
-
+import { useState,useEffect } from "react"
 export const InfoPage = () => {
+
+    
+
     return (
         <div className="container">
             <div className="d-flex justify-content-between">

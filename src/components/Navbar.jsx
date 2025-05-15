@@ -6,7 +6,7 @@ export const Navbar = () => {
 		<nav className="navbar navbar-light bg-light">
 			<div className="container">
 				<Link to="/">
-					<i className="fa-solid fa-jedi"></i>
+					<img src="src/assets/img/logo.png" alt="" className="logo"/>
 				</Link>
 				<div className="dropdown">
 					<button className="btn btn-primary dropdown-toggle d-flex align-items-center px-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
