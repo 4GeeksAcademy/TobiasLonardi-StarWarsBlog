@@ -32,7 +32,7 @@ export const Home = () => {
 						<p className="card-text">Hair-color: {items?.properties.hair_color}</p>
 						<p className="card-text">Eye-Color: {items?.properties.eye_color}</p>
 						<div className="d-flex justify-content-between align-items-center ">
-							<Link href="#" className="btn btn-primary" to={`/InfoPage/${items?.uid}`}>Learn More</Link>
+							<Link href="#" className="btn btn-primary" to={`/infopage/${items?._id}`}>Learn More</Link>
 							<span className="btn btn-primary fa-regular fa-heart "></span>
 						</div>
 					</div>
@@ -61,7 +61,7 @@ export const Home = () => {
 
 
 						<div className="d-flex justify-content-between align-items-center">
-							<Link href="#" className="btn btn-primary" to="/InfoPage/0">Learn More</Link>
+							<Link href="#" className="btn btn-primary" to="/infopage/0">Learn More</Link>
 							<span className="btn btn-primary fa-regular fa-heart "></span>
 						</div>
 					</div>

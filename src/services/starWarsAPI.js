@@ -9,7 +9,6 @@
 					data.results.map(async (item) => {
 						const res = await fetch(item.url)
 						const detail = await res.json()
-						console.log("detail.result: ",detail.result)
 						return detail.result;
 					})
 				)
@@ -30,7 +29,6 @@
 					data.results.map(async (item) => {
 						const res = await fetch(item.url)
 						const detail = await res.json()
-						console.log("detail.result: ",detail.result)
 						return detail.result;
 					})
 				)
