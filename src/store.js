@@ -13,7 +13,9 @@ export const initialStore=()=>{
         background: null,
       }
     ],
-    characters:[]
+    characters:[],
+
+    planets:[]
   }
 }
 
@@ -32,6 +34,12 @@ export default function storeReducer(store, action = {}) {
       return{
         ...store,
         characters: action.payload
+      }
+
+    case 'set_planets' :
+      return{
+        ...store,
+        planets: action.payload
       }
 
     default:

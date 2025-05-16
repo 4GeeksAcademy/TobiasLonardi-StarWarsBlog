@@ -20,3 +20,26 @@
 		}
 
 	}
+
+	export async function loadAllPlanets() {
+		try {
+			const respond = await fetch(`${baseAPI}/planets`)
+			const data = await respond.json()
+			if (respond.ok) {
+				const planetsArray = await Promise.all(
+					data.results.map(async (item) => {
+						const res = await fetch(item.url)
+						const detail = await res.json()
+						console.log("detail.result: ",detail.result)
+						return detail.result;
+					})
+				)
+				return planetsArray
+			}
+		} catch (error) {
+			console.log(error)
+		}
+
+	}
+
+	

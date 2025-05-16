@@ -6,17 +6,8 @@ export const InfoPage = () => {
 
     const { store, dispatch } = useGlobalReducer()
 
-    const [character,setCharacter] = useState({})
     const {id} = useParams()
 
-    function getCharacter(){
-        setCharacter(store.characters.find((item)=> item.uid == id))
-        console.log(character)
-    }
-
-    useEffect(()=>{
-        getCharacter()
-    },[store.characters])
 
     return (
         <div className="container">
@@ -35,15 +26,19 @@ export const InfoPage = () => {
                             <p>Luke Skywalker</p>
                         </div>
                         <div className="d-flex flex-column align-items-center">
-                            <p>Gender:</p>
-                            <p>Male</p>
+                            <p>Population:</p>
+                            <p>200000</p>
                         </div>
                         <div className="d-flex flex-column align-items-center">
-                            <p>height:</p>
+                            <p>Climate:</p>
                             <p>1.76m</p>
                         </div>
                         <div className="d-flex flex-column align-items-center">
-                            <p>Skin color:</p>
+                            <p>Orbital period:</p>
+                            <p>Fair</p>
+                        </div>
+                         <div className="d-flex flex-column align-items-center">
+                            <p>Diameter:</p>
                             <p>Fair</p>
                         </div>
                     </div>
