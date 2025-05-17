@@ -11,7 +11,6 @@ export const InfoPage = () => {
 
     function getCharacter(){
         setCharacter(store.characters.find((item)=> item._id == id))
-        console.log(character)
     }
 
     useEffect(()=>{
@@ -21,7 +20,7 @@ export const InfoPage = () => {
     return (
         <div className="container">
             <div className="d-flex justify-content-between">
-				<img src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/refs/heads/master/public/images/people/${character?.uid}.jpg`} className="card-img-top " alt={items?.properties.name} />
+				<img src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/refs/heads/master/public/images/people/${character?.uid}.jpg`} className="card-img-top " alt={character?.properties?.name} />
                 <div className="text-center">
                     <h2>{character?.properties?.name}</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.</p>
@@ -36,15 +35,15 @@ export const InfoPage = () => {
                         </div>
                         <div className="d-flex flex-column align-items-center">
                             <p>Gender:</p>
-                            <p>{character?.properties.gender}</p>
+                            <p>{character?.properties?.gender}</p>
                         </div>
                         <div className="d-flex flex-column align-items-center">
                             <p>height:</p>
-                            <p>{character?.properties.height}</p>
+                            <p>{character?.properties?.height}</p>
                         </div>
                         <div className="d-flex flex-column align-items-center">
                             <p>Skin color:</p>
-                            <p>{character?.properties.skin_color}</p>
+                            <p>{character?.properties?.skin_color}</p>
                         </div>
                     </div>
                 </div>

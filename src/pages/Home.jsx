@@ -9,7 +9,9 @@ export const Home = () => {
 
 	const { store, dispatch } = useGlobalReducer()
 	
-
+	function addToFavorites(character){
+		dispatch({type: "add_favorites", payload: character})
+	}
 
 
 	return (
@@ -33,7 +35,13 @@ export const Home = () => {
 						<p className="card-text">Eye-Color: {items?.properties.eye_color}</p>
 						<div className="d-flex justify-content-between align-items-center ">
 							<Link href="#" className="btn btn-primary" to={`/infopage/${items?._id}`}>Learn More</Link>
-							<span className="btn btn-primary fa-regular fa-heart "></span>
+							{
+								store.favorites.includes(items) ?
+								<span className="btn btn-outline-warning fa-solid fa-heart "onClick={()=>addToFavorites(items)}></span> :
+								<span className="btn btn-outline-warning fa-regular fa-heart "onClick={()=>addToFavorites(items)}></span> 
+
+
+							}
 						</div>
 					</div>
 				</div>
@@ -52,7 +60,7 @@ export const Home = () => {
 				padding: '10px'
 			}}>
 				{store.planets.map((items)=>
-				<div className="card " style={{ width: "18rem", minWidth: '300px', height: '525px', backgroundColor: 'lightblue' }}>
+				<div className="card " key={items._id} style={{ width: "18rem", minWidth: '300px', height: '525px', backgroundColor: 'lightblue' }}>
 					<img src={`https://raw.githubusercontent.com/breatheco-de/swapi-images/refs/heads/master/public/images/planets/${items.uid}.jpg`} className="card-img-top" alt="..." />
 					<div className="card-body d-flex flex-column justify-content-between">
 						<h5 className="card-title">{items?.properties.name}</h5>
@@ -61,8 +69,14 @@ export const Home = () => {
 
 
 						<div className="d-flex justify-content-between align-items-center">
-							<Link href="#" className="btn btn-primary" to="/infopage/0">Learn More</Link>
-							<span className="btn btn-primary fa-regular fa-heart "></span>
+							<Link href="#" className="btn btn-primary" to={`/infopageplanet/${items?._id}`}>Learn More</Link>
+							{
+								store.favorites.includes(items) ?
+								<span className="btn btn-outline-warning fa-solid fa-heart "onClick={()=>addToFavorites(items)}></span> :
+								<span className="btn btn-outline-warning fa-regular fa-heart "onClick={()=>addToFavorites(items)}></span> 
+
+
+							}
 						</div>
 					</div>
 				</div>
